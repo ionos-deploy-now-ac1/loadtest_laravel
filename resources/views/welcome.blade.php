@@ -55,7 +55,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Loadtest 3. Run 
+                                    Loadtest 4. Run 
                                 </div>
                             </div>
                         </div>
