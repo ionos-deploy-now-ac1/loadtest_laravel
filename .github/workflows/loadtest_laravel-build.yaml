@@ -44,14 +44,6 @@ jobs:
         with:
           node-version: v16.x
 
-      - name: Build Node assets
-        env:
-          CI: true
-          SITE_URL: ${{ inputs.site-url }}
-        run: |
-          npm ci
-          npm run build
-
       - name: Setup composer
         uses: php-actions/composer@v6
 # uncomment the following lines if you want to add environment variables for this step
@@ -69,6 +61,15 @@ jobs:
 #          MY_ENV_VAR: value-for-my-env-var
 #          MY_SECRET_ENV_VAR: ${{ secrets.MY_SECRET }} # here you can find information how to create secrets: https://docs.github.com/en/actions/security-guides/encrypted-secrets
         run: php artisan key:generate --force -n
+
+      - name: Build Node assets
+        env:
+          CI: true
+          SITE_URL: ${{ inputs.site-url }}
+        run: |
+          npm ci
+          npm run build
+
 
 # Please do not touch the following action
       - name: Store deployment content
